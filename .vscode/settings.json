@@ -1,3 +1,4 @@
 {
+    "C_Cpp.default.cStandard": "c23",
     "editor.formatOnSave": true
 }
