@@ -28,11 +28,13 @@ void disable_raw_mode(void) {
 
 int read_buf(char* buf, int len) {
     int count = 0;
+    count = read(STDIN_FILENO, buf, len);
     return count;
 }
 
 int write_buf(const char* buf, int len) {
     int count = 0;
+    count = write(STDOUT_FILENO, buf, len);
     return count;
 }
 
