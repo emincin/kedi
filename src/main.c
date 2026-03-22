@@ -2,6 +2,12 @@
 #include <termios.h>
 #include <unistd.h>
 
+typedef struct {
+    bool is_running;
+} EditorState;
+
+static EditorState editor;
+
 void enable_raw_mode(void) {
     int ret = 0;
     struct termios io = {0};
