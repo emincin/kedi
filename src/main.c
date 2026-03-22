@@ -26,6 +26,16 @@ void disable_raw_mode(void) {
     ret = tcsetattr(STDIN_FILENO, TCSANOW, &io);
 }
 
+int read_buf(char* buf, int len) {
+    int count = 0;
+    return count;
+}
+
+int write_buf(const char* buf, int len) {
+    int count = 0;
+    return count;
+}
+
 int main(int argc, char** argv) {
     init_editor();
     enable_raw_mode();
