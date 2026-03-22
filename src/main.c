@@ -8,6 +8,10 @@ typedef struct {
 
 static EditorState editor;
 
+void init_editor(void) {
+    editor.is_running = true;
+}
+
 void enable_raw_mode(void) {
     int ret = 0;
     struct termios io = {0};
@@ -23,7 +27,10 @@ void disable_raw_mode(void) {
 }
 
 int main(int argc, char** argv) {
+    init_editor();
     enable_raw_mode();
+    while (editor.is_running) {
+    }
     disable_raw_mode();
     return 0;
 }
