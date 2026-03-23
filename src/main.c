@@ -39,6 +39,8 @@ int write_buf(const char* buf, int len) {
 }
 
 void process_input() {
+    char buf[1024] = {};
+    int count = read_buf(buf, sizeof(buf));
 }
 
 void render_screen() {
