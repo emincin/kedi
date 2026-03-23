@@ -2,7 +2,7 @@
 #include <termios.h>
 #include <unistd.h>
 
-typedef struct {
+typedef struct EditorState {
     bool is_running;
 } EditorState;
 
