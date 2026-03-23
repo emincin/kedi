@@ -44,7 +44,11 @@ void process_input() {
 void render_screen() {
 }
 
+void parse_args(int argc, char** argv) {
+}
+
 int main(int argc, char** argv) {
+    parse_args(argc, argv);
     init_editor();
     enable_raw_mode();
     while (editor.is_running) {
