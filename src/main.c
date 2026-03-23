@@ -38,10 +38,18 @@ int write_buf(const char* buf, int len) {
     return count;
 }
 
+void process_input() {
+}
+
+void render_screen() {
+}
+
 int main(int argc, char** argv) {
     init_editor();
     enable_raw_mode();
     while (editor.is_running) {
+        render_screen();
+        process_input();
     }
     disable_raw_mode();
     return 0;
