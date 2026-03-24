@@ -1,3 +1,12 @@
+/*
+ * MIT License
+ * Copyright (c) 2026 Emin Cin
+ *
+ * This file is part of kedi.
+ * Licensed under the MIT License.
+ * See the LICENSE file for details.
+ */
+
 #include <sys/ioctl.h>
 #include <termios.h>
 #include <unistd.h>
