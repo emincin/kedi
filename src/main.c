@@ -11,6 +11,11 @@
 #include <termios.h>
 #include <unistd.h>
 
+typedef struct Size {
+    int width;
+    int height;
+} Size;
+
 typedef struct EditorState {
     bool is_running;
 } EditorState;
