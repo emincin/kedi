@@ -3,3 +3,7 @@ a.out
 kedi
 *.dSYM
 main
+Makefile
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
