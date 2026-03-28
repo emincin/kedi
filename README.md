@@ -1,6 +1,6 @@
 # kedi
 
-`kedi` is a terminal text editor.
+`kedi` is a terminal text editor written in C23.
 
 ```
 =^.^=
