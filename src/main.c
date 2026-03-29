@@ -11,6 +11,8 @@
  * See the LICENSE file for details.
  */
 
+#include <stdio.h>
+
 #include <sys/ioctl.h>
 #include <termios.h>
 #include <unistd.h>
