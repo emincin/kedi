@@ -1,4 +1,8 @@
 /**
+ * @file main.c
+ * @author Emin Cin
+ * @date 2026-03-29
+ *
  * MIT License
  * Copyright (c) 2026 Emin Cin
  *
