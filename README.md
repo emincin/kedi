@@ -35,6 +35,8 @@
 
 `git ls-files --eol` shows the EOL of tracked files in both the index and the working directory.
 
+`git clean -fdx` deletes all untracked files and directories.
+
 ## License
 
 Licensed under the MIT License. See the LICENSE file for details.
