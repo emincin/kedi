@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Emin Cin
- * @date 2026-03-29
+ * @date 2026-03-31
  *
  * MIT License
  * Copyright (c) 2026 Emin Cin
@@ -28,22 +28,22 @@ typedef struct EditorState {
 
 static EditorState editor;
 
-void init_editor(void) {
+void init_editor() {
     editor.is_running = true;
 }
 
-void enable_raw_mode(void) {
+void enable_raw_mode() {
     int ret = 0;
-    struct termios io = {0};
+    struct termios io = {};
     ret = tcgetattr(STDIN_FILENO, &io);
     io.c_lflag &= ~ECHO;
     io.c_lflag &= ~ICANON;
     ret = tcsetattr(STDIN_FILENO, TCSANOW, &io);
 }
 
-void disable_raw_mode(void) {
+void disable_raw_mode() {
     int ret = 0;
-    struct termios io = {0};
+    struct termios io = {};
     ret = tcgetattr(STDIN_FILENO, &io);
     io.c_lflag |= ECHO;
     io.c_lflag |= ICANON;
