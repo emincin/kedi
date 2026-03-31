@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Emin Cin
- * @date 2026-03-31
+ * @date 2026-04-01
  *
  * MIT License
  * Copyright (c) 2026 Emin Cin
@@ -16,6 +16,8 @@
 #include <sys/ioctl.h>
 #include <termios.h>
 #include <unistd.h>
+
+typedef struct termios termios;
 
 typedef struct Size {
     int width;
@@ -34,7 +36,7 @@ void init_editor() {
 
 void enable_raw_mode() {
     int ret = 0;
-    struct termios io = {};
+    termios io = {};
     ret = tcgetattr(STDIN_FILENO, &io);
     io.c_lflag &= ~ECHO;
     io.c_lflag &= ~ICANON;
@@ -43,7 +45,7 @@ void enable_raw_mode() {
 
 void disable_raw_mode() {
     int ret = 0;
-    struct termios io = {};
+    termios io = {};
     ret = tcgetattr(STDIN_FILENO, &io);
     io.c_lflag |= ECHO;
     io.c_lflag |= ICANON;
