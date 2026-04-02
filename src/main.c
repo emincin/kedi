@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Emin Cin
- * @date 2026-04-01
+ * @date 2026-04-03
  *
  * MIT License
  * Copyright (c) 2026 Emin Cin
@@ -32,6 +32,13 @@ static EditorState editor;
 
 void init_editor() {
     editor.is_running = true;
+}
+
+bool is_printable_ascii_char(char c) {
+    if (32 <= c && c <= 126) {
+        return true;
+    }
+    return false;
 }
 
 void enable_raw_mode() {
