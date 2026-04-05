@@ -21,6 +21,8 @@ typedef typeof(sizeof(nullptr)) size_t;
 
 typedef struct termios termios;
 
+typedef struct winsize winsize;
+
 typedef struct Size {
     int width;
     int height;
@@ -79,6 +81,10 @@ size_t write_buf(const char* buf, size_t len) {
 
 Size get_window_size() {
     Size size = {};
+    winsize ws = {};
+    int ret = ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws);
+    size.width = ws.ws_col;
+    size.height = ws.ws_row;
     return size;
 }
 
