@@ -12,6 +12,7 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 
 #include <sys/ioctl.h>
 #include <termios.h>
@@ -44,6 +45,13 @@ void init_editor() {
 
 bool is_printable_ascii_char(char c) {
     if (32 <= c && c <= 126) {
+        return true;
+    }
+    return false;
+}
+
+bool str_eq(const char* a, const char* b) {
+    if (strcmp(a, b) == 0) {
         return true;
     }
     return false;
@@ -104,6 +112,10 @@ void render_screen() {
 }
 
 void parse_args(int argc, char** argv) {
+    if (argc == 2) {
+        if (str_eq(argv[1], "raw")) {
+        }
+    }
 }
 
 int main(int argc, char** argv) {
