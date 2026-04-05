@@ -113,7 +113,8 @@ void render_screen() {
 
 void parse_args(int argc, char** argv) {
     if (argc == 2) {
-        if (str_eq(argv[1], "raw")) {
+        if (str_eq(argv[1], "--rawmode")) {
+        } else if (str_eq(argv[1], "--version")) {
         }
     }
 }
