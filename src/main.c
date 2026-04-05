@@ -61,18 +61,26 @@ void enable_raw_mode() {
     int ret = 0;
     termios io = {};
     ret = tcgetattr(STDIN_FILENO, &io);
+    if (ret == -1) {
+    }
     io.c_lflag &= ~(tcflag_t)ECHO;
     io.c_lflag &= ~(tcflag_t)ICANON;
     ret = tcsetattr(STDIN_FILENO, TCSANOW, &io);
+    if (ret == -1) {
+    }
 }
 
 void disable_raw_mode() {
     int ret = 0;
     termios io = {};
     ret = tcgetattr(STDIN_FILENO, &io);
+    if (ret == -1) {
+    }
     io.c_lflag |= ECHO;
     io.c_lflag |= ICANON;
     ret = tcsetattr(STDIN_FILENO, TCSANOW, &io);
+    if (ret == -1) {
+    }
 }
 
 size_t read_buf(char* buf, size_t len) {
