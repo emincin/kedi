@@ -1,4 +1,6 @@
 all: kedi
 
+CFLAGS += -std=c23
+
 kedi: main.c
-	cc main.c -o kedi -std=c23
+	cc main.c -o kedi $(CFLAGS)
