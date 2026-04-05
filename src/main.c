@@ -29,12 +29,16 @@ typedef struct Size {
 } Size;
 
 typedef struct EditorState {
+    Size window_size;
     bool is_running;
 } EditorState;
+
+Size get_window_size();
 
 static EditorState editor;
 
 void init_editor() {
+    editor.window_size = get_window_size();
     editor.is_running = true;
 }
 
