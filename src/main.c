@@ -83,6 +83,9 @@ Size get_window_size() {
     Size size = {};
     winsize ws = {};
     int ret = ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws);
+    if (ret == -1) {
+        return size;
+    }
     size.width = ws.ws_col;
     size.height = ws.ws_row;
     return size;
