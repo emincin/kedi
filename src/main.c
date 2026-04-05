@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Emin Cin
- * @date 2026-04-03
+ * @date 2026-04-05
  *
  * MIT License
  * Copyright (c) 2026 Emin Cin
@@ -16,6 +16,8 @@
 #include <sys/ioctl.h>
 #include <termios.h>
 #include <unistd.h>
+
+typedef typeof(sizeof(nullptr)) size_t;
 
 typedef struct termios termios;
 
