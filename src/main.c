@@ -61,6 +61,7 @@ void disable_raw_mode() {
     ret = tcsetattr(STDIN_FILENO, TCSANOW, &io);
 }
 
+/*
 int read_buf(char* buf, int len) {
     int count = 0;
     count = read(STDIN_FILENO, buf, len);
@@ -72,10 +73,27 @@ int write_buf(const char* buf, int len) {
     count = write(STDOUT_FILENO, buf, len);
     return count;
 }
+*/
+
+size_t read_buf(char* buf, size_t len) {
+    ssize_t ret = read(STDIN_FILENO, buf, len);
+    if (ret == -1) {
+        return 0;
+    }
+    return (size_t)ret;
+}
+
+size_t write_buf(const char* buf, size_t len) {
+    ssize_t ret = write(STDOUT_FILENO, buf, len);
+    if (ret == -1) {
+        return 0;
+    }
+    return (size_t)ret;
+}
 
 void process_input() {
     char buf[1024] = {};
-    int count = read_buf(buf, sizeof(buf));
+    size_t count = read_buf(buf, sizeof(buf));
 }
 
 void render_screen() {
