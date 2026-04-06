@@ -10,3 +10,6 @@ kedi: main.c
 
 clean:
 	rm kedi
+
+install: kedi
+	sudo cp kedi /usr/local/bin/
