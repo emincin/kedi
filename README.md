@@ -29,6 +29,15 @@
 
 ```
 
+## Build
+
+Build with Make:
+
+```sh
+cd src
+make
+```
+
 ## Tips
 
 `git shortlog -s -n` shows the total number of commits per author, sorted by number of commits.
