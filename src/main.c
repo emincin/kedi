@@ -12,11 +12,14 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include <sys/ioctl.h>
 #include <termios.h>
 #include <unistd.h>
+
+#define KEDI_VERSION "0.0.1"
 
 typedef typeof(sizeof(nullptr)) size_t;
 
@@ -123,6 +126,8 @@ void parse_args(int argc, char** argv) {
     if (argc == 2) {
         if (str_eq(argv[1], "--rawmode")) {
         } else if (str_eq(argv[1], "--version")) {
+            printf("%s\n", KEDI_VERSION);
+            exit(0);
         }
     }
 }
