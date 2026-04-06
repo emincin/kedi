@@ -13,3 +13,6 @@ clean:
 
 install: kedi
 	sudo cp kedi /usr/local/bin/
+
+uninstall:
+	sudo rm -f /usr/local/bin/kedi
