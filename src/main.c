@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Emin Cin
- * @date 2026-04-05
+ * @date 2026-04-09
  *
  * MIT License
  * Copyright (c) 2026 Emin Cin
@@ -123,6 +123,24 @@ void render_screen() {
 }
 
 void test_raw_mode() {
+    enable_raw_mode();
+    while (true) {
+        char buf[1024] = {};
+        size_t count = read_buf(buf, sizeof(buf));
+        if (count == 1 && buf[0] == 27) {
+            break;
+        }
+        for (size_t i = 0; i < count; i++) {
+            char c = buf[i];
+            if (is_printable_ascii_char(c)) {
+                printf("%c", c);
+            } else {
+                printf("(%d)", c);
+            }
+        }
+        puts("");
+    }
+    disable_raw_mode();
 }
 
 void parse_args(int argc, char** argv) {
