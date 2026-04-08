@@ -122,9 +122,14 @@ void process_input() {
 void render_screen() {
 }
 
+void test_raw_mode() {
+}
+
 void parse_args(int argc, char** argv) {
     if (argc == 2) {
         if (str_eq(argv[1], "--rawmode")) {
+            test_raw_mode();
+            exit(0);
         } else if (str_eq(argv[1], "--version")) {
             printf("%s\n", KEDI_VERSION);
             exit(0);
