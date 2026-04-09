@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Emin Cin
- * @date 2026-04-09
+ * @date 2026-04-10
  *
  * MIT License
  * Copyright (c) 2026 Emin Cin
@@ -143,13 +143,17 @@ void test_raw_mode() {
     disable_raw_mode();
 }
 
+void show_version() {
+    printf("%s\n", KEDI_VERSION);
+}
+
 void parse_args(int argc, char** argv) {
     if (argc == 2) {
         if (str_eq(argv[1], "--rawmode")) {
             test_raw_mode();
             exit(0);
         } else if (str_eq(argv[1], "--version")) {
-            printf("%s\n", KEDI_VERSION);
+            show_version();
             exit(0);
         }
     }
